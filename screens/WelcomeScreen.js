@@ -12,7 +12,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 const { width, height } = Dimensions.get('window');
 
-export default function WelcomeScreen() {
+export default function WelcomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" />
@@ -30,10 +30,7 @@ export default function WelcomeScreen() {
           
           <TouchableOpacity
             style={styles.button}
-            onPress={() => {
-              // Navigation will be added when we build the next screen
-              console.log('Get Started pressed');
-            }}
+            onPress={() => navigation.navigate('Discovery')}
             activeOpacity={0.8}
           >
             <LinearGradient
