@@ -130,13 +130,14 @@ const styles = StyleSheet.create({
   /* BOTTOM SECTION - Dark Gray with Rounded Top */
   bottomSection: {
     flex: 1,
+    marginTop: 250,
     backgroundColor: '#2a2a2a',
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
     justifyContent: 'flex-end',
     alignItems: 'center',
-    paddingBottom: 40,
-    paddingTop: 200, // Space for overlapping image
+    paddingBottom: 24,
+    paddingTop: 32,
   },
 
   indicators: {
