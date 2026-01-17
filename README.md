@@ -65,5 +65,5 @@ This project is licensed under the MIT License.
 
 👤 Author
 
-Celia Furaha Niyongira
+FURAHA Niyongira Celia
 Mobile & Full-Stack Developer

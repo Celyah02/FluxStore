@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
   /* BOTTOM SECTION - Dark Gray with Rounded Top */
   bottomSection: {
     flex: 1,
-    marginTop: 250,
+    marginTop: 320,
     backgroundColor: '#2a2a2a',
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
@@ -189,8 +189,8 @@ const styles = StyleSheet.create({
   },
 
   carouselContent: {
-    paddingLeft: (width - CARD_WIDTH) / 2,
-    paddingRight: (width - CARD_WIDTH) / 2,
+    paddingLeft: 0.1,
+    paddingRight: 0.1,
   },
 
   carousel: {
