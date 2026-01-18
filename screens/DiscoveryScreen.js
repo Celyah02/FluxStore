@@ -65,29 +65,17 @@ export default function DiscoveryScreen({ navigation }) {
         </TouchableOpacity>
       </View>
 
-      {/* IMAGE CAROUSEL - Overlapping both sections, showing partial side cards */}
-      <View style={styles.carouselWrapper}>
-        <ScrollView
-          ref={scrollViewRef}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          onScroll={handleScroll}
-          scrollEventThrottle={16}
-          contentContainerStyle={styles.carouselContent}
-          snapToInterval={CARD_WIDTH + CARD_SPACING}
-          decelerationRate="fast"
-        >
-          {[1, 2, 3].map((_, index) => (
-            <View key={index} style={styles.carouselItem}>
-              <Image
-                source={require('../assets/pic2.png')}
-                style={styles.carouselImage}
-                resizeMode="cover"
-              />
-            </View>
-          ))}
-        </ScrollView>
-      </View>
+      {/* SINGLE CENTERED IMAGE */}
+<View style={styles.carouselWrapper}>
+  <View style={styles.singleImageContainer}>
+    <Image
+      source={require('../assets/pic2.png')}
+      style={styles.carouselImage}
+      resizeMode="cover"
+    />
+  </View>
+</View>
+
     </View>
   );
 }
@@ -104,6 +92,11 @@ const styles = StyleSheet.create({
     paddingTop: 50,
     paddingBottom: 0,
     zIndex: 1,
+  },
+
+  singleImageContainer: {
+    'alignItems': 'center',
+    'justifyContent': 'center',
   },
 
   header: {
