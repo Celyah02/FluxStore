@@ -54,9 +54,26 @@ export default function ExploreScreen({navigation}){
 
                 </View>
 
-                
+                <TouchableOpacity
+          style={styles.shoppingButton}
+          onPress={handleShoppingNow}
+          activeOpacity={0.8}
+        >
+          <Text style={styles.shoppingButtonText}>Shopping now</Text>
+        </TouchableOpacity>
 
             </View>
+    /* ================= CENTER IMAGE ================= */
+            <View style={styles.carouselWrapper}>
+        <View style={styles.singleImageContainer}>
+          <Image
+            source={require('../assets/pic2.png')}
+            style={styles.carouselImage}
+            resizeMode="cover"
+          />
+        </View>
+      </View> 
+        
         </View>
 
     );
