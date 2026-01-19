@@ -10,52 +10,71 @@ import {
   StatusBar,
 } from 'react-native';
 
+// Get device screen dimensions (used for responsive sizing)
 const { width, height } = Dimensions.get('window');
+
+// Width of the image card relative to screen width
 const CARD_WIDTH = width - 100;
+
+// Space between cards (kept for future carousel support)
 const CARD_SPACING = 16;
 
 export default function DiscoveryScreen({ navigation }) {
+
+  // Tracks which carousel item is currently active
   const [activeIndex, setActiveIndex] = useState(0);
+
+  // Reference to ScrollView (useful for programmatic scrolling)
   const scrollViewRef = useRef(null);
 
+  // Calculates active carousel index based on horizontal scroll position
   const handleScroll = (event) => {
     const scrollPosition = event.nativeEvent.contentOffset.x;
     const index = Math.round(scrollPosition / (CARD_WIDTH + CARD_SPACING));
     setActiveIndex(index);
   };
 
+  // Handles Shopping button press
   const handleShoppingNow = () => {
     console.log('Shopping now pressed');
+    // navigation.navigate('Shop'); // example navigation
   };
 
   return (
     <View style={styles.container}>
+      {/* Controls status bar text color */}
       <StatusBar barStyle="dark-content" />
 
-      {/* TOP SECTION - White Background */}
+      {/* ================= TOP SECTION ================= */}
+      {/* White background section containing title & subtitle */}
       <View style={styles.topSection}>
         <View style={styles.header}>
           <Text style={styles.title}>Discover something new</Text>
-          <Text style={styles.subtitle}>Special new arrivals just for you</Text>
+          <Text style={styles.subtitle}>
+            Special new arrivals just for you
+          </Text>
         </View>
       </View>
 
-      {/* BOTTOM SECTION - Dark Gray with Rounded Top Corners */}
+      {/* ================= BOTTOM SECTION ================= */}
+      {/* Dark gray section with rounded top corners */}
       <View style={styles.bottomSection}>
-        {/* Carousel Indicators */}
+
+        {/* Pagination indicators (static for now, dynamic-ready) */}
         <View style={styles.indicators}>
           {[0, 1, 2].map((i) => (
             <View
               key={i}
               style={[
                 styles.indicator,
+                // Highlights indicator based on activeIndex
                 activeIndex === i && styles.indicatorActive,
               ]}
             />
           ))}
         </View>
 
-        {/* Shopping Now Button */}
+        {/* Call-to-action button */}
         <TouchableOpacity
           style={styles.shoppingButton}
           onPress={handleShoppingNow}
@@ -65,38 +84,34 @@ export default function DiscoveryScreen({ navigation }) {
         </TouchableOpacity>
       </View>
 
-      {/* SINGLE CENTERED IMAGE */}
-<View style={styles.carouselWrapper}>
-  <View style={styles.singleImageContainer}>
-    <Image
-      source={require('../assets/pic2.png')}
-      style={styles.carouselImage}
-      resizeMode="cover"
-    />
-  </View>
-</View>
+      {/* ================= CENTER IMAGE ================= */}
+      {/* Absolutely positioned to overlap top & bottom sections */}
+      <View style={styles.carouselWrapper}>
+        <View style={styles.singleImageContainer}>
+          <Image
+            source={require('../assets/pic2.png')}
+            style={styles.carouselImage}
+            resizeMode="cover"
+          />
+        </View>
+      </View>
 
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  /* MAIN SCREEN CONTAINER */
   container: {
     flex: 1,
     backgroundColor: '#ffffff',
   },
 
-  /* TOP SECTION */
+  /* ================= TOP SECTION ================= */
   topSection: {
     backgroundColor: '#ffffff',
     paddingTop: 50,
-    paddingBottom: 0,
-    zIndex: 1,
-  },
-
-  singleImageContainer: {
-    'alignItems': 'center',
-    'justifyContent': 'center',
+    zIndex: 1, // Keeps text below the overlapping image
   },
 
   header: {
@@ -120,10 +135,16 @@ const styles = StyleSheet.create({
     fontWeight: '400',
   },
 
-  /* BOTTOM SECTION - Dark Gray with Rounded Top */
+  /* ================= IMAGE CONTAINER ================= */
+  singleImageContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  /* ================= BOTTOM SECTION ================= */
   bottomSection: {
     flex: 1,
-    marginTop: 320,
+    marginTop: 320, // Pushes section down to make space for image
     backgroundColor: '#2a2a2a',
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
@@ -133,10 +154,9 @@ const styles = StyleSheet.create({
     paddingTop: 32,
   },
 
+  /* Indicator dots */
   indicators: {
     flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
     marginBottom: 32,
     gap: 8,
   },
@@ -154,15 +174,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
   },
 
+  /* Shopping button */
   shoppingButton: {
     width: width - 60,
     paddingVertical: 16,
     borderRadius: 30,
     borderWidth: 1,
     borderColor: '#ffffff',
-    backgroundColor: 'transparent',
     alignItems: 'center',
-    justifyContent: 'center',
   },
 
   shoppingButtonText: {
@@ -171,7 +190,8 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
 
-  /* CAROUSEL WRAPPER - Positioned to overlap sections */
+  /* ================= IMAGE POSITIONING ================= */
+  /* Positioned absolutely to float between sections */
   carouselWrapper: {
     position: 'absolute',
     top: height * 0.32,
@@ -181,22 +201,7 @@ const styles = StyleSheet.create({
     zIndex: 10,
   },
 
-  carouselContent: {
-    paddingLeft: 0.1,
-    paddingRight: 0.1,
-  },
-
-  carousel: {
-    height: 350,
-  },
-
-  carouselItem: {
-    width: CARD_WIDTH,
-    marginRight: CARD_SPACING,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-
+  /* Image styling */
   carouselImage: {
     width: CARD_WIDTH,
     height: 350,
