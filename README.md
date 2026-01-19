@@ -10,8 +10,6 @@ FluxStore is a modern mobile e-commerce application built with React Native, des
 
 🛒 Shopping Cart – Add, update, and remove items from the cart
 
-💳 Checkout Flow – Seamless and user-friendly checkout process
-
 🔐 User Authentication – Secure login and account management
 
 📱 Responsive UI – Optimized for performance and usability across devices
