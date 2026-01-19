@@ -34,10 +34,29 @@ export default function ExploreScreen({navigation}){
             <View style = {styles.topSection}>
                 <view style={styles.header}>
                     <Text style={styles.title}>Update Trendy Outfit</Text>
+                    <Text style={ styles.subtitle}>Favorites brands and hot trends</Text>
 
                 </view>
+                
+            </View>
 
-        </View>
+            <View style= {styles.bottomSection}>
+                <View style ={styles.indicators}>
+                    {[0,1,2].map ((i)=>(
+                        <View
+                        key={i}
+                        style= {[
+                            styles.indicator,
+                            activeIndex===i && styles.indicatorActive,
+                        ]}
+                        />
+                    ))}
+
+                </View>
+
+                
+
+            </View>
         </View>
 
     );
