@@ -63,7 +63,7 @@ export default function ExploreScreen({navigation}){
         </TouchableOpacity>
 
             </View>
-    /* ================= CENTER IMAGE ================= */
+                        
             <View style={styles.carouselWrapper}>
         <View style={styles.singleImageContainer}>
           <Image
