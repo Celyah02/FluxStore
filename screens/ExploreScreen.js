@@ -18,6 +18,28 @@ export default function ExploreScreen({navigation}){
     const [activeIndex, setActiveIndex] = useState(0);
     const ScrollViewRef= useRef(null);
 
-    const hanndleScroll
+    const handleScroll =(event)=>{
+        const scrollPosition = event.nativeEvent.contentOffset.x;
+        const index= Math.round(scrollPosition/(CARD_WIDTH+CARD_SPACING));
+        setActiveIndex(index);
+    };
+
+    const handleShoppingNow =()=>{
+        console.log('Shopping now pressed');
+    };
+
+    return(
+        <View style={styles.container}>
+            <StatusBar barStyle="dark-content"/>
+            <View style = {styles.topSection}>
+                <view style={styles.header}>
+                    <Text style={styles.title}>Update Trendy Outfit</Text>
+
+                </view>
+
+        </View>
+        </View>
+
+    );
 
 }
