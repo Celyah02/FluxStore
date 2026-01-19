@@ -67,7 +67,7 @@ export default function ExploreScreen({navigation}){
             <View style={styles.carouselWrapper}>
         <View style={styles.singleImageContainer}>
           <Image
-            source={require('../assets/pic2.png')}
+            source={require('../assets/pic3.png')}
             style={styles.carouselImage}
             resizeMode="cover"
           />
