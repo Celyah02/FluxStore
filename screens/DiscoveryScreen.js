@@ -36,8 +36,7 @@ export default function DiscoveryScreen({ navigation }) {
 
   // Handles Shopping button press
   const handleShoppingNow = () => {
-    console.log('Shopping now pressed');
-    // navigation.navigate('Shop'); // example navigation
+    navigation.navigate('Explore');
   };
 
   return (

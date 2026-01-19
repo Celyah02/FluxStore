@@ -32,11 +32,11 @@ export default function ExploreScreen({navigation}){
         <View style={styles.container}>
             <StatusBar barStyle="dark-content"/>
             <View style = {styles.topSection}>
-                <view style={styles.header}>
+                <View style={styles.header}>
                     <Text style={styles.title}>Update Trendy Outfit</Text>
                     <Text style={ styles.subtitle}>Favorites brands and hot trends</Text>
 
-                </view>
+                </View>
                 
             </View>
 
