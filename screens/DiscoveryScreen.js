@@ -85,15 +85,15 @@ export default function DiscoveryScreen({ navigation }) {
 
       {/* ================= CENTER IMAGE ================= */}
       {/* Absolutely positioned to overlap top & bottom sections */}
-      <View style={styles.carouselWrapper}>
-        <View style={styles.singleImageContainer}>
-          <Image
-            source={require('../assets/pic2.png')}
-            style={styles.carouselImage}
-            resizeMode="cover"
-          />
-        </View>
-      </View>
+<View style={styles.carouselWrapper}>
+  <View style={styles.singleImageContainer}>
+    <Image
+      source={require('../assets/pic2.png')}
+      style={styles.carouselImage}
+      resizeMode="cover"
+    />
+  </View>
+</View>
 
     </View>
   );
