@@ -90,7 +90,7 @@ export default function DiscoveryScreen({ navigation }) {
     <Image
       source={require('../assets/pic2.png')}
       style={styles.carouselImage}
-      resizeMode="cover"
+      resizeMode="contain"
     />
   </View>
 </View>
@@ -138,6 +138,8 @@ const styles = StyleSheet.create({
   singleImageContainer: {
     alignItems: 'center',
     justifyContent: 'center',
+    width: '100%',
+    height: '100%',
   },
 
   /* ================= BOTTOM SECTION ================= */
@@ -198,6 +200,7 @@ const styles = StyleSheet.create({
     right: 0,
     height: 350,
     zIndex: 10,
+    overflow: 'visible',
   },
 
   /* Image styling */
