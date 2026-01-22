@@ -33,8 +33,8 @@ export default function ExploreScreen({navigation}){
             <StatusBar barStyle="dark-content"/>
             <View style = {styles.topSection}>
                 <View style={styles.header}>
-                    <Text style={styles.title}>Update Trendy Outfit</Text>
-                    <Text style={ styles.subtitle}>Favorites brands and hot trends</Text>
+                    <Text style={styles.title}>Explore your true style</Text>
+                    <Text style={ styles.subtitle}>Relax and let us bring style to you</Text>
 
                 </View>
                 
@@ -67,7 +67,7 @@ export default function ExploreScreen({navigation}){
             <View style={styles.carouselWrapper}>
         <View style={styles.singleImageContainer}>
           <Image
-            source={require('../assets/pic3.png')}
+            source={require('../assets/pic4.png')}
             style={styles.carouselImage}
             resizeMode="contain"
           />
