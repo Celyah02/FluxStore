@@ -5,8 +5,8 @@ import { StatusBar } from 'expo-status-bar';
 
 import WelcomeScreen from './screens/WelcomeScreen';
 import DiscoveryScreen from './screens/DiscoveryScreen';
-import UpdateScreen from '../screens/UpdateScreen';
-import ExploreScreen from '../screens/ExploreScreen';
+import UpdateScreen from './screens/UpdateScreen';
+import ExploreScreen from './screens/ExploreScreen';
 
 const Stack = createNativeStackNavigator();
 
