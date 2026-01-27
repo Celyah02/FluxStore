@@ -25,7 +25,7 @@ export default function ExploreScreen({navigation}){
     };
 
     const handleShoppingNow =()=>{
-        console.log('Shopping now pressed');
+        navigation.navigate('SignUp');
     };
 
     return(
