@@ -30,6 +30,11 @@ export default function SignUpScreen({ navigation }) {
     console.log(`${provider} login pressed`);
   };
 
+  const handleShoppingNow =()=>{
+    console.log('Login pressed');
+    navigation.navigate('Login');
+};
+
   return (
     <KeyboardAvoidingView
       style={styles.container}
