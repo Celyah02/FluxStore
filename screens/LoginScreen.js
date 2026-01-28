@@ -116,13 +116,13 @@ export default function LoginScreen({ navigation }) {
           </View>
         </View>
 
-        {/* Login Link */}
+        {/* Sign Up Link */}
         <View style={styles.loginSection}>
           <Text style={styles.loginText}>
             Don't have an account?{' '}
             <Text
               style={styles.loginLink}
-              onPress={() => navigation.navigate('Login')}
+              onPress={() => navigation.navigate('SignUp')}
             >
               Sign Up
             </Text>

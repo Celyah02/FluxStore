@@ -8,6 +8,7 @@ import DiscoveryScreen from './screens/DiscoveryScreen';
 import UpdateScreen from './screens/UpdateScreen';
 import ExploreScreen from './screens/ExploreScreen';
 import SignUpScreen from './screens/SignUpScreen';
+import LoginScreen from './screens/LoginScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -26,6 +27,7 @@ export default function App() {
         <Stack.Screen name='Update' component={UpdateScreen}/>
         <Stack.Screen name='Explore' component={ExploreScreen}/>
         <Stack.Screen name='SignUp' component={SignUpScreen}/>
+        <Stack.Screen name='Login' component={LoginScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
