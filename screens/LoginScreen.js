@@ -41,23 +41,13 @@ export default function LoginScreen({ navigation }) {
       >
         {/* Header Section */}
         <View style={styles.headerSection}>
-          <Text style={styles.headerTitle}>Create</Text>
+          <Text style={styles.headerTitle}>Log Into</Text>
           <Text style={styles.headerTitle}>your account</Text>
         </View>
 
         {/* Form Section */}
         <View style={styles.formSection}>
-          <View style={styles.inputContainer}>
-            <TextInput
-              style={styles.input}
-              placeholder="Enter your name"
-              placeholderTextColor="#000000"
-              value={name}
-              onChangeText={setName}
-              autoCapitalize="words"
-            />
-            <View style={styles.inputUnderline} />
-          </View>
+          
 
           <View style={styles.inputContainer}>
             <TextInput
@@ -84,31 +74,21 @@ export default function LoginScreen({ navigation }) {
             <View style={styles.inputUnderline} />
           </View>
 
-          <View style={styles.inputContainer}>
-            <TextInput
-              style={styles.input}
-              placeholder="Confirm password"
-              placeholderTextColor="#000000"
-              value={confirmPassword}
-              onChangeText={setConfirmPassword}
-              secureTextEntry
-            />
-            <View style={styles.inputUnderline} />
-          </View>
+    
         </View>
 
-        {/* Sign Up Button */}
+        {/* Login Button */}
         <TouchableOpacity
-          style={styles.signUpButton}
-          onPress={handleSignUp}
+          style={styles.loginButton}
+          onPress={handleLogin}
           activeOpacity={0.8}
         >
-          <Text style={styles.signUpButtonText}>SIGN UP</Text>
+          <Text style={styles.signUpButtonText}>LOG IN</Text>
         </TouchableOpacity>
 
         {/* Social Login Section */}
         <View style={styles.socialSection}>
-          <Text style={styles.socialText}>or sign up with</Text>
+          <Text style={styles.socialText}>or log in with</Text>
           <View style={styles.socialIconsContainer}>
             <TouchableOpacity
               style={styles.socialIcon}
@@ -139,12 +119,12 @@ export default function LoginScreen({ navigation }) {
         {/* Login Link */}
         <View style={styles.loginSection}>
           <Text style={styles.loginText}>
-            Already have account?{' '}
+            Don't have an account?{' '}
             <Text
               style={styles.loginLink}
               onPress={() => navigation.navigate('Login')}
             >
-              Log In
+              Sign Up
             </Text>
           </Text>
         </View>
